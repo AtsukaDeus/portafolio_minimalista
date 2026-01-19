@@ -14,3 +14,76 @@
 a {
     text-decoration: none;
 }
+
+.base {
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.img-perfil {
+    width: 230px;
+    height: 230px;
+    border-radius: 100%;
+    border: 1px solid black;
+}
+
+.imagen-y-acerca-de-mi {
+    display: grid; 
+    grid-template-columns: repeat(1, 1fr); gap: 40px;
+}
+
+/* Estilos base (móviles) */
+body { 
+    font-size: 16px; 
+}
+
+button {
+    font-size: 16px;   
+}
+
+/* Para pantallas medianas (tablets) */
+@media (min-width: 768px) {
+    body { font-size: 18px; }
+    .imagen-y-acerca-de-mi {
+        display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;
+    }
+
+    .base {
+        width: 60%;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    button {
+        font-size: 18px;   
+    }
+
+    .img-perfil {
+        width: 250px;
+        height: 250px;   
+    }
+}
+
+/* Para pantallas grandes (laptops/escritorio) */
+@media (min-width: 1200px) {
+    body { font-size: 20px; }
+    .imagen-y-acerca-de-mi {
+        display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;
+    }
+    .base {
+        width: 50%;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    button {
+        font-size: 20px;   
+    }
+
+    .img-perfil {
+        width: 300px;
+        height: 300px;   
+    }
+}
+
