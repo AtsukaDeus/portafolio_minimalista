@@ -167,6 +167,82 @@ h4 {
     margin-right: 4px;
 }
 
+/* Links page (linktree) */
+.links-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px 16px;
+}
+
+.links-card {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.links-card .img-perfil {
+    margin-top: 0;
+    width: 110px;
+    height: 110px;
+}
+
+.links-name {
+    font-size: 1.2em;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-align: center;
+}
+
+.links-subtitle {
+    font-size: 0.85em;
+    color: #555;
+    text-align: center;
+    margin-top: -4px;
+}
+
+.link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 20px;
+    border: 1px solid #111;
+    border-radius: 10px;
+    background: #fff;
+    color: #111;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.link-btn:hover {
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.link-btn .icon {
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0;
+}
+
+.links-footer {
+    margin-top: 8px;
+    font-size: 0.75em;
+    color: #aaa;
+}
+
 /* Contact paragraphs */
 .contact-line {
     margin-bottom: 4px;
