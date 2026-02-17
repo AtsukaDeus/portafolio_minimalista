@@ -33,13 +33,15 @@ a:hover {
 /* Navigation */
 nav {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 8px;
 }
 
 .nav-btn {
     display: inline-block;
-    padding: 6px 14px;
+    padding: 8px 14px;
+    font-size: 14px;
     border: 1px solid #111;
     border-radius: 6px;
     background: #fff;
@@ -60,11 +62,11 @@ nav {
 
 /* Layout */
 .base {
-    width: 80%;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    width: 92%;
+    margin-top: 12px;
+    margin-bottom: 24px;
     background: #fff;
-    padding: 32px;
+    padding: 16px;
     border-radius: 12px;
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
 }
@@ -79,6 +81,7 @@ nav {
 h2 {
     margin-top: 8px;
     margin-bottom: 12px;
+    font-size: 1.3em;
     letter-spacing: -0.02em;
 }
 
@@ -96,8 +99,8 @@ h4 {
 /* Profile image */
 .img-perfil {
     margin-top: 20px;
-    width: 230px;
-    height: 230px;
+    width: 160px;
+    height: 160px;
     border-radius: 100%;
     border: 1px solid black;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -112,13 +115,13 @@ h4 {
 /* Grid layout */
 .imagen-y-acerca-de-mi {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 40px;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
 /* Job entries */
 .job-entry {
-    padding: 20px;
+    padding: 12px;
     border-radius: 8px;
     transition: box-shadow 0.2s;
 }
@@ -144,9 +147,30 @@ h4 {
     margin-bottom: 4px;
 }
 
+/* Inline icons */
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    margin-right: 6px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+
+.nav-btn .icon {
+    width: 0.9em;
+    height: 0.9em;
+    margin-right: 4px;
+}
+
 /* Contact paragraphs */
 .contact-line {
     margin-bottom: 4px;
+    word-break: break-word;
 }
 
 /* Tablets */
@@ -154,22 +178,28 @@ h4 {
     body { font-size: 18px; }
 
     .imagen-y-acerca-de-mi {
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 40px;
     }
 
     .base {
-        width: 60%;
+        width: 70%;
         margin-top: 20px;
         margin-bottom: 40px;
+        padding: 28px;
     }
+
+    h2 { font-size: 1.5em; }
+
+    .nav-btn { font-size: 16px; }
 
     .img-perfil {
         margin-top: 20px;
-        width: 250px;
-        height: 250px;
+        width: 220px;
+        height: 220px;
     }
+
+    .job-entry { padding: 20px; }
 }
 
 /* Desktop */
@@ -177,7 +207,6 @@ h4 {
     body { font-size: 20px; }
 
     .imagen-y-acerca-de-mi {
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 40px;
     }
@@ -186,12 +215,15 @@ h4 {
         width: 50%;
         margin-top: 20px;
         margin-bottom: 40px;
+        padding: 36px;
     }
+
+    .nav-btn { font-size: 18px; }
 
     .img-perfil {
         margin-top: 20px;
-        width: 250px;
-        height: 250px;
+        width: 280px;
+        height: 280px;
     }
 }
 
