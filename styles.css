@@ -1,52 +1,162 @@
+/* Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base */
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #111;
+    background: #fbfdff;
+}
+
 .contenedor {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.destacar {
-    border: 1px solid gray;
-    padding: 2px;
-    border-radius: 5px;
 }
 
 a {
     text-decoration: none;
+    color: inherit;
+    transition: text-decoration-color 0.2s;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.nav-btn {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid #111;
+    border-radius: 6px;
+    background: #fff;
+    color: #111;
+    font-size: inherit;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.nav-btn:hover {
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Layout */
 .base {
     width: 80%;
     margin-top: 20px;
     margin-bottom: 40px;
+    background: #fff;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
 }
 
+/* Selection */
+::selection {
+    background: #111;
+    color: #fff;
+}
+
+/* Headings */
+h2 {
+    margin-top: 8px;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+
+h3 {
+    margin-top: 24px;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+}
+
+h4 {
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+/* Profile image */
 .img-perfil {
+    margin-top: 20px;
     width: 230px;
     height: 230px;
     border-radius: 100%;
     border: 1px solid black;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.img-perfil:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Grid layout */
 .imagen-y-acerca-de-mi {
-    display: grid; 
-    grid-template-columns: repeat(1, 1fr); gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
 }
 
-/* Estilos base (móviles) */
-body { 
-    font-size: 16px; 
+/* Job entries */
+.job-entry {
+    padding: 20px;
+    border-radius: 8px;
+    transition: box-shadow 0.2s;
 }
 
-button {
-    font-size: 16px;   
+.job-entry:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
-/* Para pantallas medianas (tablets) */
+.job-entry + .job-entry {
+    border-top: 1px solid #eee;
+    margin-top: 24px;
+    padding-top: 24px;
+}
+
+/* Lists inside .base */
+.base ul {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding-left: 20px;
+}
+
+.base li {
+    margin-bottom: 4px;
+}
+
+/* Contact paragraphs */
+.contact-line {
+    margin-bottom: 4px;
+}
+
+/* Tablets */
 @media (min-width: 768px) {
     body { font-size: 18px; }
+
     .imagen-y-acerca-de-mi {
-        display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
     }
 
     .base {
@@ -55,35 +165,44 @@ button {
         margin-bottom: 40px;
     }
 
-    button {
-        font-size: 18px;   
-    }
-
     .img-perfil {
+        margin-top: 20px;
         width: 250px;
-        height: 250px;   
+        height: 250px;
     }
 }
 
-/* Para pantallas grandes (laptops/escritorio) */
+/* Desktop */
 @media (min-width: 1200px) {
     body { font-size: 20px; }
+
     .imagen-y-acerca-de-mi {
-        display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
     }
+
     .base {
         width: 50%;
         margin-top: 20px;
         margin-bottom: 40px;
     }
 
-    button {
-        font-size: 20px;   
-    }
-
     .img-perfil {
-        width: 300px;
-        height: 300px;   
+        margin-top: 20px;
+        width: 250px;
+        height: 250px;
     }
 }
 
+/* Print */
+@media print {
+    nav { display: none; }
+    .base { width: 100%; }
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #555;
+    }
+    .nav-btn::after { content: none; }
+}
